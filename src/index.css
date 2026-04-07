@@ -1,0 +1,277 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'DOS/V re. ANK24';
+  src: url('https://cdn.jsdelivr.net/gh/Veredia/oldschool-pc-fonts/ttf/Px437_DOS-V_re_ANK24.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --breakpoint-xs: 475px;
+
+  --font-sans: "Outfit", sans-serif;
+  --font-lora: "Lora", serif;
+  --font-w95fa: "W95FA", sans-serif;
+  --font-ibm: "VT323", monospace;
+  --font-dos: "DOS/V re. ANK24", monospace;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-display: "Clash Display", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 0;
+  }
+  
+  ::selection {
+    background-color: #33ff33;
+    color: #000000;
+  }
+  
+  /* Retro Scrollbar */
+  ::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+    background: #c0c0c0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+    border: 1px solid #c0c0c0;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #dfdfdf;
+    background-image: linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%, #ffffff),
+                      linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%, #ffffff);
+    background-size: 4px 4px;
+    background-position: 0 0, 2px 2px;
+  }
+
+  ::-webkit-scrollbar-button {
+    background: #c0c0c0;
+    width: 16px;
+    height: 16px;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+    display: block;
+  }
+
+  /* Arrows for scrollbar buttons */
+  ::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 5L4 9H12L8 5Z' fill='black'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  ::-webkit-scrollbar-button:single-button:vertical:increment {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 11L4 7H12L8 11Z' fill='black'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Dark mode scrollbar */
+  .dark ::-webkit-scrollbar {
+    background: #000000;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #1c1c1c;
+    box-shadow: inset -1px -1px #000000, inset 1px 1px #444444, inset -2px -2px #111111, inset 2px 2px #333333;
+    border: 1px solid #1c1c1c;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: #000000;
+    background-image: none;
+  }
+
+  .dark ::-webkit-scrollbar-button {
+    background: #1c1c1c;
+    box-shadow: inset -1px -1px #000000, inset 1px 1px #444444, inset -2px -2px #111111, inset 2px 2px #333333;
+  }
+
+  .dark ::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 5L4 9H12L8 5Z' fill='%2333ff33'/%3E%3C/svg%3E");
+  }
+
+  .dark ::-webkit-scrollbar-button:single-button:vertical:increment {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 11L4 7H12L8 11Z' fill='%2333ff33'/%3E%3C/svg%3E");
+  }
+  
+  body {
+    @apply bg-slate-50 text-slate-900 overflow-x-hidden antialiased transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-[#33ff33];
+    font-family: var(--font-sans);
+  }
+
+  /* Scanlines effect for dark mode */
+  :is(.dark body)::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 255, 0, 0.03),
+      rgba(0, 255, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+    z-index: 50;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-2.5 bg-slate-900 text-white rounded-lg font-medium 
+    transition-all hover:bg-slate-800 hover:-translate-y-0.5 
+    active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed
+    shadow-lg shadow-slate-900/20
+    dark:bg-blue-600 dark:hover:bg-blue-500 dark:shadow-blue-900/20;
+  }
+
+  .retro-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded border border-slate-300 bg-slate-100 
+    text-xs font-mono font-medium text-slate-600 uppercase tracking-wide
+    shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_1px_2px_rgba(0,0,0,0.05)]
+    dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400 dark:shadow-none;
+  }
+
+  /* Win95 Window Styles */
+  .win95-window {
+    @apply bg-[#c0c0c0] p-1 border-2 transition-colors duration-300
+    dark:bg-[#1c1c1c] dark:border-[#1c1c1c];
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px #808080, inset 2px 2px #ffffff;
+  }
+  
+  :is(.dark .win95-window) {
+    box-shadow: inset -1px -1px #000000, inset 1px 1px #444444, inset -2px -2px #111111, inset 2px 2px #333333;
+  }
+
+  .win95-title-bar {
+    @apply bg-slate-800 text-white px-2 py-1 flex justify-between items-center font-bold text-sm select-none
+    dark:bg-black dark:text-[#33ff33] dark:border-b dark:border-[#33ff33];
+  }
+
+  .win95-btn {
+    @apply bg-[#c0c0c0] border-2 active:border-t-[#808080] active:border-l-[#808080] active:border-b-white active:border-r-white
+    dark:bg-[#1c1c1c] dark:text-[#33ff33] dark:border-[#1c1c1c];
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  }
+
+  :is(.dark .win95-btn) {
+    box-shadow: inset -1px -1px #000000, inset 1px 1px #444444, inset -2px -2px #111111, inset 2px 2px #333333;
+  }
+
+  :is(.dark .win95-btn:active) {
+    box-shadow: inset 1px 1px #000000, inset -1px -1px #444444, inset 2px 2px #111111, inset -2px -2px #333333;
+    border: 2px solid #1c1c1c;
+  }
+}
+
+/* Custom Utilities */
+.pixelated {
+  image-rendering: pixelated;
+}
+
+.scanlines::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0.03) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* True Glitch Effect (RGB Split without layout shift) */
+.glitch-hover {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-hover::before,
+.glitch-hover::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.glitch-hover:hover::before {
+  color: #000080; /* Win95 Title Bar Blue */
+  z-index: -1;
+  opacity: 0.8;
+  animation: glitch-anim-1 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+.glitch-hover:hover::after {
+  color: #808080; /* Win95 Shadow Grey */
+  z-index: -2;
+  opacity: 0.8;
+  animation: glitch-anim-2 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+}
+
+:is(.dark .glitch-hover:hover)::before {
+  color: #33ff33; /* Neon Green */
+}
+
+:is(.dark .glitch-hover:hover)::after {
+  color: #ffffff; /* White for high contrast/phosphor effect */
+}
+
+@keyframes glitch-anim-1 {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 2px) }
+  40% { transform: translate(-2px, -2px) }
+  60% { transform: translate(2px, 2px) }
+  80% { transform: translate(2px, -2px) }
+  100% { transform: translate(0) }
+}
+
+@keyframes glitch-anim-2 {
+  0% { transform: translate(0) }
+  20% { transform: translate(2px, -2px) }
+  40% { transform: translate(2px, 2px) }
+  60% { transform: translate(-2px, 2px) }
+  80% { transform: translate(-2px, -2px) }
+  100% { transform: translate(0) }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee, .glitch-hover:hover {
+    animation: none;
+  }
+}
