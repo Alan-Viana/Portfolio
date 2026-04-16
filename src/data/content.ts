@@ -57,7 +57,7 @@ export const content = {
         title: "PopInfo",
         description: "Plataforma de cadastro e consulta de serviços socioassistenciais e doações em São Paulo.",
         tags: ["React", "Tailwind", "TypeScript"],
-        githubUrl: "https://github.com/Alan-Viana/popinfo",
+        githubUrl: "https://github.com/Alan-Viana/popinfov2",
         deployUrl: "https://popinfo.vercel.app/",
         image: "https://placehold.co/600x400/1e293b/33ff33?text=PopInfo",
     
