@@ -1,4 +1,81 @@
-export const content = {
+export interface SocialLinks {
+  github: string;
+  linkedin: string;
+}
+
+export interface HeroContent {
+  name: string;
+  role: string;
+  tagline: string;
+  intro: string;
+  image: string;
+  buttons: {
+    projects: string;
+    cv: string;
+  };
+}
+
+export interface AboutSkill {
+  label: string;
+  items: string;
+}
+
+export interface ProjectItem {
+  title: string;
+  description: string;
+  tags: string[];
+  githubUrl: string;
+  deployUrl?: string;
+  image: string;
+}
+
+export interface ContentData {
+  social: SocialLinks;
+  hero: HeroContent;
+  about: {
+    windowTitle: string;
+    shortBio: {
+      intro: string;
+      stackTitle: string;
+      stack: string[];
+    };
+    fullBio: {
+      title: string;
+      backgroundTitle: string;
+      background: string[];
+      educationTitle: string;
+      education: string[];
+      skillsTitle: string;
+      skills: AboutSkill[];
+    };
+  };
+  projects: {
+    sectionTitle: string;
+    path: string;
+    openButton: string;
+    list: ProjectItem[];
+  };
+  contact: {
+    title: string;
+    subtitle: string;
+    form: {
+      name: string;
+      namePlaceholder: string;
+      email: string;
+      emailPlaceholder: string;
+      phone: string;
+      phonePlaceholder: string;
+      subject: string;
+      subjectPlaceholder: string;
+      message: string;
+      messagePlaceholder: string;
+      submit: string;
+    };
+    footer: string;
+  };
+}
+
+export const content: ContentData = {
   social: {
     github: "https://github.com/Alan-Viana",
     linkedin: "https://www.linkedin.com/in/alan-viana7/",

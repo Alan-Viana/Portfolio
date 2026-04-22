@@ -1,7 +1,7 @@
-import { Suspense, lazy, useState } from 'react';
+import { Suspense, lazy } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Hero } from '@/components/sections/Hero';
-import { ThemeProvider } from '@/context/ThemeContext';
+import { ThemeProvider } from '@/context/ThemeProvider';
 import { BackToTop } from '@/components/ui/BackToTop';
 import { NotFound } from '@/components/ui/NotFound';
 
@@ -12,9 +12,7 @@ const TechMarquee = lazy(() => import('@/components/sections/TechMarquee').then(
 
 
 function App() {
-  const [is404] = useState(() => {
-    return window.location.pathname !== '/' && window.location.pathname !== '/index.html';
-  });
+  const is404 = window.location.pathname !== '/' && window.location.pathname !== '/index.html';
 
   if (is404) {
     return <NotFound />;
@@ -27,7 +25,7 @@ function App() {
         
         <main>
           <Hero />
-          <Suspense fallback={<div className="min-h-[100dvh]" />}>
+          <Suspense fallback={<div className="min-h-dvh" />}>
             <About />
             <Projects />
             <TechMarquee />

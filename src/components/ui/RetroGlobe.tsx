@@ -1,7 +1,7 @@
 
 import createGlobe from 'cobe';
 import { useEffect, useRef } from 'react';
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/useTheme';
 
 export const RetroGlobe = ({ className = "" }: { className?: string }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);

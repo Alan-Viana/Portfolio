@@ -1,8 +1,8 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 
 interface Win95WindowProps {
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   headerClassName?: string;
   contentClassName?: string;
@@ -15,7 +15,7 @@ interface Win95WindowProps {
   centerTitle?: boolean;
 }
 
-export const Win95Window: React.FC<Win95WindowProps> = ({ 
+export const Win95Window = ({ 
   title, 
   children, 
   className = '', 
@@ -32,7 +32,7 @@ export const Win95Window: React.FC<Win95WindowProps> = ({
   onMaximize,
   isMaximized = false,
   centerTitle = false
-}) => {
+}: Win95WindowProps) => {
   const btnClasses = `win95-btn w-5 h-5 flex items-center justify-center text-[10px] font-bold leading-none pb-1 transition-colors ${buttonClassName || 'text-black dark:text-slate-200 dark:bg-[#333] dark:border-[#555]'}`;
   const closeBtnClasses = `win95-btn w-5 h-5 flex items-center justify-center text-[10px] font-bold leading-none pb-1 transition-colors ${buttonClassName || 'text-black dark:text-black dark:bg-red-600 dark:border-red-800 dark:hover:bg-red-500'}`;
 

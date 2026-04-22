@@ -24,7 +24,7 @@ export const About = () => {
   const [bioText, setBioText] = useState(initialText);
 
   return (
-    <section id="about" className="min-h-[100dvh] py-24 md:py-32 lg:py-28 2xl:py-32 bg-white dark:bg-[#050505] relative transition-colors duration-300 flex flex-col justify-center scroll-mt-0">
+    <section id="about" className="min-h-dvh py-24 md:py-32 lg:py-28 2xl:py-32 bg-white dark:bg-[#050505] relative transition-colors duration-300 flex flex-col justify-center scroll-mt-0">
       <div 
         className="w-full mx-auto px-4 sm:px-6 md:px-8"
       >
