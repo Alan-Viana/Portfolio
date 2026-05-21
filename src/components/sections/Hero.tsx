@@ -86,8 +86,8 @@ export const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center w-full px-4"
           >
             <motion.a 
-              href="/Currículo Alan Viana.pdf"
-              download="Currículo Alan Viana.pdf"
+              href="/Alan_Viana_Sousa_Curriculo.pdf"
+              download="Alan_Viana_Sousa_Curriculo.pdf"
               className="win95-btn px-6 py-2.5 text-slate-900 dark:text-white dark:hover:text-[#33ff33] font-bold active:translate-y-px active:shadow-none flex items-center justify-center gap-2 w-full sm:w-auto transition-colors duration-200"
               initial="initial"
               whileHover="hover"
