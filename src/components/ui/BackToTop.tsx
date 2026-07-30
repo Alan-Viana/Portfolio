@@ -32,7 +32,7 @@ export const BackToTop = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-40 p-2 win95-btn shadow-lg dark:border dark:border-[#33ff33]"
+          className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-40 p-2 win95-btn shadow-lg"
           aria-label="Voltar ao topo"
         >
           <svg
@@ -45,7 +45,7 @@ export const BackToTop = () => {
             strokeWidth="2"
             strokeLinecap="square"
             strokeLinejoin="miter"
-            className="text-black dark:text-[#33ff33]"
+            className="text-black"
           >
             <path d="M12 19V5M5 12l7-7 7 7" />
           </svg>

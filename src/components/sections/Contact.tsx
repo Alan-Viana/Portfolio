@@ -89,7 +89,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="min-h-[80dvh] py-16 md:py-24 lg:py-28 2xl:py-32 bg-slate-800 dark:bg-black text-white dark:text-[#33ff33] relative overflow-hidden transition-colors duration-300 flex flex-col justify-center scroll-mt-28">
+    <section id="contact" aria-labelledby="contact-heading" className="min-h-[80dvh] py-16 pb-24 md:py-24 md:pb-28 lg:py-28 lg:pb-32 2xl:py-32 2xl:pb-36 bg-slate-800 text-white relative overflow-hidden flex flex-col justify-center scroll-mt-28">
       <div className="absolute inset-0 opacity-10 pointer-events-none" 
            style={{ 
              backgroundImage: 'linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)', 
@@ -102,7 +102,7 @@ export const Contact = () => {
       <div 
         className="w-full max-w-[90vw] lg:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 relative z-10"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 2xl:gap-12 items-center overflow-hidden">
+        <div className="grid min-w-0 grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 2xl:gap-12 items-center overflow-hidden">
           
           <motion.div 
             initial={variants.fadeInUp.initial}
@@ -113,12 +113,12 @@ export const Contact = () => {
           >
             <RetroGlobe className="opacity-60" />
             <div className="flex items-center gap-6 mt-8">
-              <SocialLink href={content.social.linkedin} label="Abrir LinkedIn" className="text-white/60 dark:text-[#33ff33] hover:text-white dark:hover:text-white transition-colors transform hover:-translate-y-1">
+              <SocialLink href={content.social.linkedin} label="Abrir LinkedIn" className="text-white/60 hover:text-white transition-colors transform hover:-translate-y-1">
                 <svg className="h-8 w-8 sm:h-9 sm:w-9" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
                 </svg>
               </SocialLink>
-              <SocialLink href={content.social.github} label="Abrir GitHub" className="text-white/60 dark:text-[#33ff33] hover:text-white dark:hover:text-white transition-colors transform hover:-translate-y-1">
+              <SocialLink href={content.social.github} label="Abrir GitHub" className="text-white/60 hover:text-white transition-colors transform hover:-translate-y-1">
                 <svg className="h-8 w-8 sm:h-9 sm:w-9" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
                 </svg>
@@ -127,14 +127,14 @@ export const Contact = () => {
           </motion.div>
 
           <div 
-            className="text-left order-1 md:order-2 lg:order-1 w-full max-w-lg mx-auto lg:mx-0"
+            className="text-left order-1 min-w-0 md:order-2 lg:order-1 w-full max-w-lg mx-auto lg:mx-0"
           >
-            <h2 id="contact-heading" className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-display font-medium mb-4 text-white dark:text-[#33ff33] tracking-tight transition-colors pb-1 whitespace-nowrap">{content.contact.title}</h2>
+            <h2 id="contact-heading" className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-display font-medium mb-4 break-words text-white tracking-tight pb-1">{content.contact.title}</h2>
             <p className="text-white text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 max-w-xl font-sans transition-colors">
               {content.contact.subtitle}
             </p>
             
-            <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mb-8 sm:mb-12" noValidate>
+            <form onSubmit={handleSubmit} className="w-full space-y-4 max-w-lg mb-8 sm:mb-12" noValidate>
               <input type="hidden" name="_subject" value="Novo contato do Portfolio!" />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
@@ -199,7 +199,7 @@ export const Contact = () => {
                 <motion.button 
                   type="submit"
                   disabled={status === 'submitting' || status === 'success'}
-                  className={`win95-btn w-full sm:w-auto px-8 py-3 font-bold font-sans text-slate-900 dark:text-[#33ff33] active:translate-y-[1px] transition-none flex items-center justify-center gap-3 ${status === 'submitting' ? 'opacity-70 cursor-wait' : ''}`}
+                  className={`win95-btn w-full sm:w-auto px-8 py-3 font-bold font-sans text-slate-900 active:translate-y-[1px] transition-none flex items-center justify-center gap-3 ${status === 'submitting' ? 'opacity-70 cursor-wait' : ''}`}
                   initial="initial"
                   whileHover="hover"
                   whileTap="tap"
@@ -219,7 +219,7 @@ export const Contact = () => {
                     </>
                   ) : status === 'success' ? (
                     <>
-                      <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       Mensagem Enviada!
@@ -259,7 +259,7 @@ export const Contact = () => {
         </div>
 
       </div>
-      <p className="absolute bottom-4 left-0 w-full text-white/60 dark:text-slate-500 dark:opacity-60 text-xs text-center" aria-label="Rodapé do contato">
+      <p className="absolute bottom-4 left-0 w-full px-4 text-white/60 text-xs text-center" aria-label="Rodapé do contato">
         {content.contact.footer}
       </p>
     </section>

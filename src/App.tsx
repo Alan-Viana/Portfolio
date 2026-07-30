@@ -1,7 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Hero } from '@/components/sections/Hero';
-import { ThemeProvider } from '@/context/ThemeProvider';
 import { BackToTop } from '@/components/ui/BackToTop';
 import { NotFound } from '@/components/ui/NotFound';
 
@@ -19,9 +18,9 @@ function App() {
   }
 
   return (
-    <ThemeProvider>
+    <>
       <Header />
-      <div className="min-h-screen bg-slate-50 dark:bg-[#0a0a0a] transition-colors duration-300 selection:bg-slate-800 selection:text-white dark:selection:bg-pink-500 dark:selection:text-white">
+      <div className="min-h-screen bg-slate-50 selection:bg-slate-800 selection:text-white">
         
         <main>
           <Hero />
@@ -34,7 +33,7 @@ function App() {
         </main>
       </div>
       <BackToTop />
-    </ThemeProvider>
+    </>
   );
 }
 

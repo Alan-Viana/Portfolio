@@ -15,14 +15,14 @@ export const ProjectCard = ({ project, imageSrc }: ProjectCardProps) => {
       title={project.title}
       centerTitle={true}
       className="h-full shadow-lg hover:shadow-2xl transition-shadow duration-300 group w-full mx-auto"
-      headerClassName="font-w95fa group-hover:bg-slate-700 dark:group-hover:bg-[#33ff33] dark:group-hover:text-black transition-colors py-0.5 text-xs sm:text-sm"
-      contentClassName="flex flex-col !p-0 bg-white dark:bg-black"
+      headerClassName="font-w95fa group-hover:bg-slate-700 transition-colors py-0.5 text-xs sm:text-sm"
+      contentClassName="flex flex-col !p-0 bg-white"
     >
       <article className="flex flex-col h-full transition-colors duration-300" aria-labelledby={`project-title-${projectId}`}>
-        <div className="relative overflow-hidden aspect-video bg-slate-200 dark:bg-zinc-900 border-b-2 border-[#808080] dark:border-[#33ff33]">
+        <div className="relative overflow-hidden aspect-video bg-slate-200 border-b-2 border-[#808080]">
           <img
             src={imageSrc}
-            className="w-full h-full object-cover dark:grayscale dark:contrast-125 transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             alt={project.title}
             loading="lazy"
             onError={(e) => {
@@ -35,31 +35,31 @@ export const ProjectCard = ({ project, imageSrc }: ProjectCardProps) => {
 
         <div className="flex flex-col flex-1 p-3 sm:p-4 text-center">
           <div className="flex flex-col items-center mb-2">
-            <h3 id={`project-title-${projectId}`} className="font-w95fa text-slate-900 dark:text-[#33ff33] text-xl sm:text-2xl leading-tight transition-colors">
+            <h3 id={`project-title-${projectId}`} className="font-w95fa text-slate-900 text-xl sm:text-2xl leading-tight">
               {project.title}
             </h3>
           </div>
 
-          <p className="font-mono text-xs text-black dark:text-slate-300 leading-relaxed mb-4 flex-1 line-clamp-3 transition-colors">
+          <p className="font-mono text-xs text-black leading-relaxed mb-4 flex-1 line-clamp-3">
             {project.description}
           </p>
 
           <div className="flex flex-col mt-auto gap-4">
             <ul className="flex flex-wrap gap-1 justify-center min-h-6" aria-label={`Tecnologias do projeto ${project.title}`}>
               {project.tags.slice(0, 3).map((tag) => (
-                <li key={tag} className="px-1.5 py-0.5 bg-slate-100 dark:bg-zinc-900 border border-slate-300 dark:border-[#33ff33] text-[10px] sm:text-xs font-mono text-black dark:text-[#33ff33] transition-colors whitespace-nowrap">
+                <li key={tag} className="px-1.5 py-0.5 bg-slate-100 border border-slate-300 text-[10px] sm:text-xs font-mono text-black whitespace-nowrap">
                   {tag}
                 </li>
               ))}
             </ul>
 
-            <div className="flex justify-center gap-2 mt-2" aria-label={`Ações do projeto ${project.title}`}>
+            <div className="flex flex-wrap justify-center gap-2 mt-2" aria-label={`Ações do projeto ${project.title}`}>
               {project.deployUrl && (
                 <a
                   href={project.deployUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="win95-btn px-4 py-1.5 text-sm font-bold text-black dark:text-white hover:bg-slate-50 dark:hover:bg-[#33ff33] dark:hover:text-black active:translate-y-px active:shadow-none flex items-center gap-2 shrink-0 transition-colors"
+                  className="win95-btn px-4 py-1.5 text-sm font-bold text-black hover:bg-slate-50 active:translate-y-px active:shadow-none flex items-center gap-2 shrink-0 transition-colors"
                   aria-label={`Abrir deploy do projeto ${project.title}`}
                 >
                   <span>Deploy</span>
@@ -74,7 +74,7 @@ export const ProjectCard = ({ project, imageSrc }: ProjectCardProps) => {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="win95-btn px-3 py-1.5 text-sm font-bold text-black dark:text-white hover:bg-slate-50 dark:hover:bg-[#33ff33] dark:hover:text-black active:translate-y-px active:shadow-none flex items-center justify-center transition-colors"
+                  className="win95-btn px-3 py-1.5 text-sm font-bold text-black hover:bg-slate-50 active:translate-y-px active:shadow-none flex items-center justify-center transition-colors"
                   title="Ver Código"
                   aria-label={`Abrir código fonte do projeto ${project.title} no GitHub`}
                 >

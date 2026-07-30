@@ -33,8 +33,8 @@ export const Win95Window = ({
   isMaximized = false,
   centerTitle = false
 }: Win95WindowProps) => {
-  const btnClasses = `win95-btn w-5 h-5 flex items-center justify-center text-[10px] font-bold leading-none pb-1 transition-colors ${buttonClassName || 'text-black dark:text-slate-200 dark:bg-[#333] dark:border-[#555]'}`;
-  const closeBtnClasses = `win95-btn w-5 h-5 flex items-center justify-center text-[10px] font-bold leading-none pb-1 transition-colors ${buttonClassName || 'text-black dark:text-black dark:bg-red-600 dark:border-red-800 dark:hover:bg-red-500'}`;
+  const btnClasses = `win95-btn w-5 h-5 flex items-center justify-center text-[10px] font-bold leading-none pb-1 transition-colors ${buttonClassName || 'text-black'}`;
+  const closeBtnClasses = `win95-btn w-5 h-5 flex items-center justify-center text-[10px] font-bold leading-none pb-1 transition-colors ${buttonClassName || 'text-black'}`;
 
   return (
     <div className={`win95-window flex flex-col max-w-full min-w-0 ${className}`}>
@@ -99,7 +99,7 @@ export const Win95Window = ({
       </div>
 
       {/* Content Area */}
-      <div className={`flex-1 border-2 border-inset border-[#808080] dark:border-[#333] overflow-auto ${contentClassName ? contentClassName : 'bg-white dark:bg-black text-slate-900 dark:text-[#33ff33] p-4'}`}>
+      <div className={`flex-1 border-2 border-inset border-[#808080] overflow-auto ${contentClassName ? contentClassName : 'bg-white text-slate-900 p-4'}`}>
         {children}
       </div>
     </div>

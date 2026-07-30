@@ -6,7 +6,6 @@ interface TypewriterProps {
   speed?: number;
   delay?: number;
   className?: string;
-  cursorClassName?: string;
 }
 
 export const Typewriter = ({ 
@@ -14,7 +13,6 @@ export const Typewriter = ({
   speed = 30, 
   delay = 0, 
   className = '',
-  cursorClassName = '' 
 }: TypewriterProps) => {
   const [displayedText, setDisplayedText] = useState('');
   const [started, setStarted] = useState(false);
@@ -51,7 +49,7 @@ export const Typewriter = ({
       <motion.span
         animate={{ opacity: [0, 1, 0] }}
         transition={{ repeat: Infinity, duration: 0.8 }}
-        className={`inline-block w-[2px] h-[1em] bg-slate-900 dark:bg-[#33ff33] ml-0.5 align-middle ${cursorClassName}`}
+        className="inline-block w-[2px] h-[1em] bg-slate-900 ml-0.5 align-middle"
       />
     </span>
   );

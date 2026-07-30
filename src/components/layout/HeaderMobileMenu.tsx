@@ -56,24 +56,22 @@ export const HeaderMobileMenu = ({ isOpen, navItems, onNavigate }: HeaderMobileM
           animate="open"
           exit="closed"
           variants={menuVariants}
-          className="fixed top-16 left-0 w-screen h-[calc(100dvh-4rem)] z-9998 bg-white/95 dark:bg-[#050505]/95 backdrop-blur-md lg:hidden flex flex-col items-center justify-start pt-32 overflow-y-auto"
+          className="fixed top-16 inset-x-0 w-full max-w-full h-[calc(100dvh-4rem)] z-9998 bg-white/95 backdrop-blur-md lg:hidden flex flex-col items-center justify-start pt-32 overflow-x-clip overflow-y-auto overscroll-x-none touch-pan-y"
           role="dialog"
           aria-modal="true"
           aria-labelledby="mobile-menu-title"
         >
           <h2 id="mobile-menu-title" className="sr-only">Menu de navegação mobile</h2>
 
-          <nav className="flex flex-col items-center w-full gap-8" aria-label="Menu de navegação mobile">
+          <nav className="flex w-full flex-col items-stretch gap-8" aria-label="Menu de navegação mobile">
             <motion.button
               type="button"
               custom={0}
               variants={itemVariants}
               onClick={() => onNavigate('home')}
-              className="group flex items-center gap-3 px-6 py-2 text-3xl sm:text-4xl font-['W95FA'] text-slate-900 dark:text-[#33ff33] hover:text-pink-600 dark:hover:text-pink-500 transition-colors"
+              className="block w-full py-2 text-center text-2xl sm:text-3xl font-mono font-medium text-slate-900 hover:text-pink-600 transition-colors"
             >
-              <span aria-hidden="true" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-2xl">►</span>
-              <span className="group-hover:scale-110 transition-transform duration-300">Início</span>
-              <span aria-hidden="true" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-2xl">◄</span>
+              Início
             </motion.button>
 
             {navItems.map((item, index) => (
@@ -83,11 +81,9 @@ export const HeaderMobileMenu = ({ isOpen, navItems, onNavigate }: HeaderMobileM
                 custom={index + 1}
                 variants={itemVariants}
                 onClick={() => onNavigate(item.id)}
-                className="group flex items-center gap-3 px-6 py-2 text-3xl sm:text-4xl font-['W95FA'] text-slate-900 dark:text-[#33ff33] hover:text-pink-600 dark:hover:text-pink-500 transition-colors"
+                className="block w-full py-2 text-center text-2xl sm:text-3xl font-mono font-medium text-slate-900 hover:text-pink-600 transition-colors"
               >
-                <span aria-hidden="true" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-2xl">►</span>
-                <span className="group-hover:scale-110 transition-transform duration-300">{item.label}</span>
-                <span aria-hidden="true" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-2xl">◄</span>
+                {item.label}
               </motion.button>
             ))}
           </nav>

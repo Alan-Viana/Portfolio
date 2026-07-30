@@ -85,7 +85,7 @@ export const content: ContentData = {
     role: "Desenvolvedor Front-End",
     tagline: "Alan Viana",
     intro: "",
-    image: "/profile.jpg", 
+    image: "/profile.png",
     buttons: {
       projects: "Ver Projetos",
       cv: "Download CV"
@@ -108,15 +108,15 @@ export const content: ContentData = {
       background: [
         "Meu fascínio pela tecnologia nasceu da curiosidade em entender como ela molda a conexão humana. Aos 13 anos, meu primeiro computador foi o laboratório onde tudo começou: entre personalizar temas em HTML para o Tumblr e configurar protocolos via Hamachi, descobri que a tecnologia é, antes de tudo, uma ferramenta de viabilização.",
         "Minha trajetória profissional anterior consolidou uma maturidade que hoje aplico diretamente no desenvolvimento de software.",
-        "Esse histórico me moldou na resolução de problemas complexos e na compreensão de necessidades reais, permitindo-me unir a lógica da programação a uma visão crítica e humanizada sobre a experiência do usuário",
+        "Esse histórico me moldou na resolução de problemas complexos e na compreensão de necessidades reais, permitindo-me unir a lógica da programação a uma visão crítica e humanizada sobre a experiência do usuário.",
       ],
       educationTitle: "Formação, cursos e capacitações:",
       education: [
-        "Bacharelado em Tecnologia da Informação — UNIVESP (4ºSemestre)",
+        "Bacharelado em Tecnologia da Informação — UNIVESP (5ºSemestre)",
         "Oracle Next Education (ONE) — Desenvolvimento Front-End: Especialização em JavaScript e React (Alura)",
         "Meta Developer — Curso introdutório a programação e desenvolvimento (Meta)",
       ],
-      skillsTitle: "Habilidades Técnicas",
+      skillsTitle: "Habilidades Técnicas:",
       skills: [
         { label: "Frontend", items: "React, TypeScript, Tailwind CSS" },
         { label: "Backend", items: "Node.js" },

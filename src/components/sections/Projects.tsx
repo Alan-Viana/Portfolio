@@ -19,18 +19,18 @@ export const Projects = () => {
   };
 
   return (
-    <section id="work" aria-labelledby="projects-heading" className="min-h-dvh py-20 lg:py-28 2xl:py-32 bg-slate-50 dark:bg-[#050505] transition-colors duration-300 flex flex-col justify-center scroll-mt-28">
+    <section id="work" aria-labelledby="projects-heading" className="min-h-dvh py-20 lg:py-28 2xl:py-32 bg-slate-50 flex flex-col justify-center scroll-mt-28">
       <div 
         className="max-w-7xl mx-auto px-4 sm:px-6"
       >
         <div 
           className="flex flex-col items-center justify-center gap-2 mb-8 sm:mb-12 lg:mb-14 2xl:mb-16 pb-4 transition-colors"
         >
-          <h2 id="projects-heading" className="text-4xl xs:text-5xl sm:text-5xl lg:text-6xl xl:text-7xl font-lora font-normal text-slate-900 dark:text-white transition-all tracking-tight">{content.projects.sectionTitle}</h2>
-          <span className="font-mono text-slate-400 dark:text-[#33ff33] text-xs sm:text-sm transition-colors mt-2">{content.projects.path}</span>
+          <h2 id="projects-heading" className="text-4xl xs:text-5xl sm:text-5xl lg:text-6xl xl:text-7xl font-lora font-normal text-slate-900 tracking-tight">{content.projects.sectionTitle}</h2>
+          <span className="font-mono text-slate-400 text-xs sm:text-sm mt-2">{content.projects.path}</span>
         </div>
 
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 w-full max-w-5xl mx-auto px-4 md:px-0" role="list">
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 w-full max-w-5xl mx-auto" role="list">
           {projects.map((project, index) => (
             <motion.li
               key={project.title}

@@ -18,7 +18,7 @@ interface ContactFieldProps {
   optionalLabel?: string;
 }
 
-const inputBaseClass = 'w-full bg-white dark:bg-black border text-slate-900 dark:text-[#33ff33] placeholder:text-slate-400 dark:placeholder:text-[#33ff33]/50 px-4 py-3 focus:outline-none focus:border-blue-500 dark:focus:border-[#33ff33] focus:ring-1 focus:ring-blue-500 dark:focus:ring-[#33ff33] transition-all text-sm';
+const inputBaseClass = 'w-full bg-white border text-slate-900 placeholder:text-slate-400 px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-sm';
 
 export const ContactField = ({
   label,
@@ -35,12 +35,12 @@ export const ContactField = ({
   rows = 4,
   optionalLabel,
 }: ContactFieldProps) => {
-  const fieldClassName = `${inputBaseClass} ${error ? 'border-red-500' : 'border-slate-300 dark:border-[#33ff33]'}`;
+  const fieldClassName = `${inputBaseClass} ${error ? 'border-red-500' : 'border-slate-300'}`;
   const describedBy = error ? `${id}-error` : undefined;
 
   return (
     <div className="space-y-1">
-      <label htmlFor={id} className="text-sm text-white/80 dark:text-[#33ff33] uppercase tracking-wider transition-colors">
+      <label htmlFor={id} className="text-sm text-white/80 uppercase tracking-wider">
         {label}
         {optionalLabel && <span className="text-[10px] lowercase opacity-70"> {optionalLabel}</span>}
       </label>
